@@ -10,6 +10,8 @@ function tamingselect()
 	var ts_triggeroff='trigger';			// class for the inactive trigger link
 	var ts_dropdownclosed='dropdownhidden'; // closed dropdown
 	var ts_dropdownopen='dropdownvisible';	// open dropdown
+	var normal='normal';
+	var adjust='adjust';
 /*
 	Turn all selects into DOM dropdowns
 */
@@ -25,14 +27,22 @@ function tamingselect()
 			hiddenfield.id=sels[i].id;
 			hiddenfield.value=sels[i].options[0].value;
 			sels[i].parentNode.insertBefore(hiddenfield,sels[i])
+
 			var trigger=document.createElement('a');
 			ts_addclass(trigger,ts_triggeroff);
 			trigger.href='#';
+
+			var zipcode=document.getElementById('zipcode-label');
+
 			trigger.onclick=function(){
 				ts_swapclass(this,ts_triggeroff,ts_triggeron)
 				ts_swapclass(this.parentNode.getElementsByTagName('ul')[0],ts_dropdownclosed,ts_dropdownopen);
+
+				ts_swapclass(zipcode, normal, adjust);
+
 				return false;
 			}
+
 			trigger.appendChild(document.createTextNode(sels[i].options[0].text));
 			sels[i].parentNode.insertBefore(trigger,sels[i]);
 			var replaceUL=document.createElement('ul');
@@ -115,5 +125,4 @@ function tamingselect()
 window.onload=function()
 {
 	tamingselect();
-	// add more functions if necessary
 }
