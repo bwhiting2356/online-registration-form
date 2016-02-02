@@ -1,11 +1,15 @@
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: "Open Sans";
+  max-width: 50vw;
+}
+
 header {
   padding: 15px 0;
   background-color: black;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "Open Sans";
 }
 
 header h1 {
@@ -27,26 +31,75 @@ fieldset {
   border: none;
 }
 
+legend {
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
 .contact {
   display: flex;
 }
 
-.contact input, select {
-  width: 100%;
-}
+/*************************************
+Placeholder Text Style
+*************************************/
 
-#zip-code {
-  width: 180px;
+input::-webkit-input-placeholder {
+  text-align: right;
+  font-style: italic;
+  padding-right: 5px;
+}
+input::-moz-placeholder {
+  text-align: right;
+  font-style: italic;
+  padding-right: 5px;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+  text-align: right;
+  font-style: italic;
+  padding-right: 5px;
+}
+input:-ms-input-placeholder { 
+  text-align: right;
+  font-style: italic;
+  padding-right: 5px;
 }
 
 textarea {
   width: 100%;
 }
 
+button {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
 @media screen and (min-width: 760px) {
   .wrapper {
-    max-width: 600px;
+    width: 400px;
     margin: auto;
+    padding: 0;
+  }
+
+  .label-div {
+    width: 20%;
+    display: inline;
+  }
+
+  .contact-input {
+    width: 60%;
+    display: inline;
+  }
+
+  #zip-code {
+    width: 180px;
   }
 
 

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Responsive Layout Demo </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:200,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles/styles2.css">
+    <script type='text/javascript' src='js/select_dropdown.js'></script>
+<!--     <link href='https://fonts.googleapis.com/css?family=Open+Sans:200,400,700' rel='stylesheet' type='text/css'> -->
   </head>
   <header>
     <h1>THE CODE REVIEW</h1>
@@ -17,23 +17,37 @@
         <h1>Signup for our newsletter</h1>
         <p>Get the latest news on how your code is doing right in your inbox</p>
       </div>
-      <hr>
+      <hr class="thick">
       <hr>
       <form class="signup">
         <fieldset class="contact">
-          <legend><h1>Contact Information</h1></legend>
-          <label for="name">Full Name:</label>
-          <input type="text" id="name" name="full-name"><br>
-          <label for="email">Email Address:</label>
-          <input type="email" id="email" name="email-address"><br>
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone-number"><br>
+          <legend><h2>Contact Information</h2></legend>
+          <div class="contact-label">
+            <label for="name">Full Name:</label>
+          </div>
+          <div class="contact-input">
+            <input type="text" id="name" class="contact-input" 
+            name="full-name" placeholder="Required" required>
+          </div>
+          <div class="contact-label">
+            <label for="email">Email Address:</label>
+          </div>
+          <div class="contact-input">
+            <input type="email" id="email" class="contact-input" 
+            name="email-address"  placeholder="Required"required>
+          </div>
+
+          
+          
+          
+          <div class="label-div"><label for="phone">Phone:</label></div>
+          <input type="tel" id="phone" name="phone-number">
           <label for="street">Street Address:</label>
           <input type="text" id="street" name="full-name"><br>
           <label for="city">City:</label>
           <input type="text" id="city" name="city-name"><br>
-          <label for="state">State:</label>
-          <select id="state" name="state-name"><br>
+          <label class="label" for="state">State:</label>
+          <select class="turnintodropdown" name="state-name">
             <option value="" disabled selected>Choose State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -88,11 +102,11 @@
             <option value="WY">Wyoming</option>
           </select>
           <label for="zip-code">Zip Code:</label>
-          <input type="text" id="zip-code" pattern="\d*"><br>
+          <input type="text" id="zip-code" pattern="\d*" maxlength="5"><br>
         </fieldset>
         <hr>
         <fieldset>
-          <legend><h1>Newsletter</h1></legend>
+          <legend><h2>Newsletter</h2></legend>
           <label>Select the newsletters you would like to receive</label><br>
           <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked>
           <label for="html-news">HTML News</label><br>
@@ -110,6 +124,9 @@
         </fieldset>
         <button type="submit">Sign Up</button>
       </form>
+      <footer>
+        <i>Copyright The Code Review</i>
+      </footer>
     </div>
   </body>
 </html>
