@@ -64,11 +64,12 @@ legend {
 input, textarea, 
 .trigger  {
   background: #F2F2F2;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid white;
+  border-radius: 8px;
   outline: none;
   width: 100%;
   padding: 10px;
+  transition: border 0.3s;
 }
 
 input:focus, 
