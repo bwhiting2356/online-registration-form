@@ -41,6 +41,11 @@ header {
   text-align: center;
 }
 
+.thick {
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
 /*************************************
     FORM
 *************************************/
@@ -63,6 +68,7 @@ input, textarea,
   border-radius: 5px;
   outline: none;
   width: 100%;
+  padding: 10px;
 }
 
 input:focus, 
@@ -73,6 +79,11 @@ textarea:focus {
 input, 
 .trigger {
   height: 40px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
 }
 
         /*************************************
