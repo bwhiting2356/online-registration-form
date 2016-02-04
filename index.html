@@ -20,7 +20,7 @@
       <hr size="5" class="thick" color="black">
       <hr size="2" color="black">
       <form class="signup">
-        <fieldset class="contact">
+        <fieldset class="contact-info">
           <legend><h2>Contact Information</h2></legend>
           <div class="contact-item">
             <label for="name">Full Name</label>
@@ -101,28 +101,34 @@
               <option value="WY">Wyoming</option>
             </select>
           </div>
-          <div id="zipcode-div" class="contact-zipcode-normal">
+          <div id="zipcode-div" class="contact-item">
             <label id="zipcode-label" for="zip-code">Zip Code</label>
             <input type="text" id="zip-code" pattern="\d*" maxlength="5">
           <div>
         </fieldset>
         <hr size="2" color="black">
-        <fieldset>
+        <fieldset class="newsletter-prefs">
           <legend><h2>Newsletter</h2></legend>
-          <label>Select the newsletters you would like to receive</label><br>
-          <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked>
-          <label for="html-news">HTML News</label><br>
-          <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews">
-          <label for="html-news">CSS News</label><br>
-          <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews">
-          <label for="html-news">JavaScript News</label><br>
-          <label>Newsletter format</label><br>
-          <input type="radio" id="html" value="html" name="format" checked>
-          <label for="html">HTML</label><br>
-          <input type="radio" id="plain-text" value="plain-text" name="format">
-          <label for="plain-text">Plain text</label><br>
-          <label for="other-topics">Other topics you'd like to hear about</label>
-          <textarea id="other-topics"></textarea>
+          <label class="input-group-label">Select the newsletters you would like to receive</label>
+          <div class="input-group">
+            <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked>
+            <label for="html-news">HTML News</label><br>
+            <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews">
+            <label for="html-news">CSS News</label><br>
+            <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews">
+            <label for="html-news">JavaScript News</label><br>
+          </div>
+          <label class="input-group-label">Newsletter format</label>
+          <div class="input-group">
+            <input type="radio" id="html" value="html" name="format" checked>
+            <label for="html">HTML</label><br>
+            <input type="radio" id="plain-text" value="plain-text" name="format">
+            <label for="plain-text">Plain text</label><br>
+          </div>
+          <div class="input-group"> 
+            <label for="other-topics">Other topics you'd like to hear about</label>
+            <textarea id="other-topics"></textarea><br>
+          </div>
         </fieldset>
         <button type="submit">Sign Up</button>
       </form>

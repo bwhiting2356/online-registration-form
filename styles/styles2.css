@@ -51,43 +51,46 @@ header {
 *************************************/
 
 fieldset {
-  padding: 0;
+  padding: 0 0 10px 0;
   margin: 0;
   border: none;
 }
 
 legend {
-  padding-top: 2px;
-  margin-bottom: 20px;
+  padding-top: 2px; 
 }
 
-input, textarea {
-  background: #F2F2F2;
-  border: 2px solid white;
-  border-radius: 8px;
-  outline: none;
-  width: 100%;
-  padding: 10px;
-  transition: border 0.3s;
-}
+    /*******************************
+        CONTACT INFO
+    *******************************/
 
-input:focus, 
-textarea:focus {
-  border: 2px solid #0C1759;
-}
+    .contact-item input {
+      background: #F2F2F2;
+      border: 2px solid white;
+      border-radius: 8px;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      transition: border 3s;
+    }
 
-input {
-  height: 40px;
-}
+    .contact-item {
+      padding: 5px 0;
+    }
 
-textarea {
-  resize: none;
-  height: 80px;
-}
+    .contact-item input:focus {
+      border: 2px solid #0C1759;
+    }
 
-        /*************************************
+    .contact-item label {
+      float: left;
+      padding-left: 2px;
+      margin-top: 5px;
+    }
+
+        /*****************************
             PLACEHOLDER TEXT
-        *************************************/
+        *****************************/
 
         input::-webkit-input-placeholder {
           text-align: right;
@@ -109,9 +112,9 @@ textarea {
           font-style: italic;
         }
 
-        /*************************************
+        /*****************************
             DROPDOWN MENU
-        *************************************/
+        *****************************/
 
         .dropcontainer {
           position:relative;
@@ -132,6 +135,7 @@ textarea {
           background: #F2F2F2 url(../images/select-arrow-open.png) 98% center no-repeat;
           display: block;
           height: 40px;
+          float: right;
         }
 
         .trigger:hover {
@@ -148,6 +152,7 @@ textarea {
           border: 2px solid white;
           border-radius: 8px;
           height: 40px;
+          float: right;
         }
 
         .activetrigger:hover {
@@ -212,6 +217,41 @@ textarea {
         .contact-zipcode-normal {
           margin-top: 0;
         }
+
+    /*******************************
+        NEWSLETTER PREFERENCES
+    *******************************/
+
+
+    .newsletter-prefs label, 
+    .newsletter-prefs  {
+      margin-left: 2px;
+    }
+    .newsletter-prefs input, 
+    textarea {
+      margin: 8px 0;
+    }
+
+    .input-group {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+      background: #F2F2F2;
+      border: 2px solid white;
+      border-radius: 8px;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      transition: border 2s;
+    }
+
+    textarea:focus {
+      border: 2px solid #0C1759;
+    }
 
 button {
   width: 100%;
