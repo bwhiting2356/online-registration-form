@@ -61,8 +61,7 @@ legend {
   margin-bottom: 20px;
 }
 
-input, textarea, 
-.trigger  {
+input, textarea {
   background: #F2F2F2;
   border: 2px solid white;
   border-radius: 8px;
@@ -77,8 +76,7 @@ textarea:focus {
   border: 2px solid #0C1759;
 }
 
-input, 
-.trigger {
+input {
   height: 40px;
 }
 
@@ -94,25 +92,21 @@ textarea {
         input::-webkit-input-placeholder {
           text-align: right;
           font-style: italic;
-          padding-right: 5px;
         }
 
         input::-moz-placeholder {
           text-align: right;
           font-style: italic;
-          padding-right: 5px;
         }
 
         input:-moz-placeholder {   /* Older versions of Firefox */
           text-align: right;
           font-style: italic;
-          padding-right: 5px;
         }
 
         input:-ms-input-placeholder { 
           text-align: right;
           font-style: italic;
-          padding-right: 5px;
         }
 
         /*************************************
@@ -126,20 +120,18 @@ textarea {
         } 
 
         .trigger {
+          background: #F2F2F2;
+          border: 2px solid white;
+          border-radius: 8px;
+          outline: none;
+          width: 100%;
+          padding: 10px;
+          transition: border 0.3s;
           color: #777;
           padding: 10px;
           background: #F2F2F2 url(../images/select-arrow-open.png) 98% center no-repeat;
-
-
           display: block;
-          /*border: 1px solid #ccc;*/
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          -webkit-transition: all 0.5s ease;
-          -moz-transition: all 0.5s ease;
-          -o-transition: all 0.5s ease; 
-          transition: all 0.5s ease;
+          height: 40px;
         }
 
         .trigger:hover {
@@ -150,14 +142,12 @@ textarea {
         .activetrigger {
           color: #777;
           padding: 10px;
-          font-size: 16px;
           width: 100%;
           background: #f5f5f5 url(../images/select-arrow-close.png) 98% center no-repeat;
           display: block;
-          border: 1px solid #ccc;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
+          border: 2px solid white;
+          border-radius: 8px;
+          height: 40px;
         }
 
         .activetrigger:hover {
@@ -171,8 +161,8 @@ textarea {
         }
 
         .dropcontainer ul {
-          font-size: 16px;
-          border: 1px solid #ccc;
+          border: 2px solid white;
+          border-radius: 8px;
           border-top: none;
           background: #fff;
           list-style-type: none;
@@ -215,11 +205,11 @@ textarea {
           overflow-y: scroll;
         }
 
-        .adjust {
+        .contact-zipcode-adjust {
           margin-top: -200px;
         }
 
-        .normal {
+        .contact-zipcode-normal {
           margin-top: 0;
         }
 
@@ -258,12 +248,20 @@ footer {
     margin: auto;
   }
 
-  .contact {
-    display: flex;
+  .contact-item input, 
+  .dropcontainer ul,
+  .trigger, 
+  .activetrigger, 
+  .contact-zipcode-normal input,
+  .contact-zipcode-adjust input {
+    float: right;
+    width: 80%;
   }
 
-  .contact-label {
-    display: inline;
+  .contact-item:after {
+    content: " ";
+    display: table;
+    clear: both;
   }
 
 }

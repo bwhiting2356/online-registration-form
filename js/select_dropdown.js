@@ -10,8 +10,8 @@ function tamingselect()
 	var ts_triggeroff='trigger';			// class for the inactive trigger link
 	var ts_dropdownclosed='dropdownhidden'; // closed dropdown
 	var ts_dropdownopen='dropdownvisible';	// open dropdown
-	var normal='normal';					// normal margin for zipcode
-	var adjust='adjust';					// adjust so that dropdown doesn't displace zipcode
+	var normal='contact-zipcode-normal';					// normal margin for zipcode
+	var adjust='contact-zipcode-adjust';					// adjust so that dropdown doesn't displace zipcode
 
 	var count=0;
 	var toreplace=new Array();
@@ -30,7 +30,7 @@ function tamingselect()
 	ts_addclass(trigger,ts_triggeroff);
 	trigger.href='#';
 
-	var zipcode=document.getElementById('zipcode-label');
+	var zipcode=document.getElementById('zipcode-div');
 
 	trigger.onclick=function(){
 		ts_swapclass(this,ts_triggeroff,ts_triggeron)
@@ -102,7 +102,7 @@ function tamingselect()
 	}
 	function ts_swapclass(o,c1,c2)
 	{
-		var cn=o.className
+		var cn=o.className;
 		o.className=!ts_check(o,c1)?cn.replace(c2,c1):cn.replace(c1,c2);
 	}
 	function ts_addclass(o,c)
