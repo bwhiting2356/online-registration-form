@@ -71,7 +71,7 @@ legend {
       outline: none;
       width: 100%;
       padding: 10px;
-      transition: border 3s;
+      transition: border .3s;
     }
 
     .contact-item {
@@ -246,11 +246,40 @@ legend {
       outline: none;
       width: 100%;
       padding: 10px;
-      transition: border 2s;
+      transition: border .3s;
     }
 
     textarea:focus {
       border: 2px solid #0C1759;
+    }
+
+    /*****************************
+            CHECKBOX STYLE
+    *****************************/
+
+    .checkmark {
+      display: inline;
+      font-size: 1em;
+      color: #F2F2F2;
+      background: #F2F2F2;
+      padding-top: 0px;
+      padding-left: 4px;
+      padding-right: 4px;
+      border-radius: 6px;
+      padding-bottom: 0;
+      border: 2px solid white;
+    }
+
+    .checked {
+      color: blue;
+      border: 2px solid blue;
+    }
+
+    .custom-checkbox input {
+      margin-left: -25px;
+      width: 25px;
+      height: 20px;
+      opacity: 0;
     }
 
 button {
@@ -303,6 +332,4 @@ footer {
     display: table;
     clear: both;
   }
-
 }
-

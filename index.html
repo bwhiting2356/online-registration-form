@@ -111,12 +111,21 @@
           <legend><h2>Newsletter</h2></legend>
           <label class="input-group-label">Select the newsletters you would like to receive</label>
           <div class="input-group">
-            <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked>
-            <label for="html-news">HTML News</label><br>
-            <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews">
-            <label for="html-news">CSS News</label><br>
-            <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews">
-            <label for="html-news">JavaScript News</label><br>
+            <div class="custom-checkbox">
+              <div class="checkmark">&#x2713;</div>
+              <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked class="hidden-icon">
+              <label for="html-news">HTML News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="checkmark">&#x2713;</div>
+              <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews" class="hidden-icon">
+              <label for="html-news">CSS News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="checkmark">&#x2713;</div>
+              <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews" class="hidden-icon">
+              <label for="html-news">JavaScript News</label>
+            </div>
           </div>
           <label class="input-group-label">Newsletter format</label>
           <div class="input-group">

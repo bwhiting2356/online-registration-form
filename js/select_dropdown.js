@@ -111,7 +111,35 @@ function tamingselect()
 	}
 }
 
+function custom_checkbox() 
+{
+	var checkmark_icons = document.getElementsByClassName("checkmark");
+	var hidden_inputs = document.getElementsByClassName("hidden-icon");
+	for (var i = 0; i < hidden_inputs.length; i++) {
+		hidden_inputs[i].onclick = function() {
+			var related_checkmark = this.parentNode.firstElementChild;
+			if (this.checked == true) {
+			  related_checkmark.classList.add("checked");
+			} else {
+			  related_checkmark.classList.remove("checked");
+			}
+			
+		}
+	}
+
+	for (var i = 0; i < hidden_inputs.length; i++) {
+		var related_checkmark = hidden_inputs[i].parentNode.firstElementChild;
+			if (hidden_inputs[i].checked == true) {
+			  related_checkmark.classList.add("checked");
+			} else {
+			  related_checkmark.classList.remove("checked");
+			}
+	}
+
+}
+
 window.onload=function()
 {
 	tamingselect();
+	custom_checkbox();
 }
