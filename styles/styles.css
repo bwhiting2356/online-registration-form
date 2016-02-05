@@ -10,7 +10,7 @@
 
 html {
   font-family: "Crimson Text";
-  background: rgba(255,233,214,0.18);
+  background: rgba(255,233,214,0.07);
 }
 
 a {
@@ -44,6 +44,7 @@ a {
 
 .signup-info {
   text-align: center;
+  color: #383838;
 }
 
 .thick {
@@ -63,6 +64,10 @@ fieldset {
 
 legend {
   padding-top: 2px; 
+}
+
+legend h2 {
+  color: #383838;
 }
 
 label {
@@ -154,7 +159,7 @@ label {
           padding: 10px;
           background: rgba(255,233,214,0.6) url(../images/select-arrow-open.png) 98% center no-repeat;
           display: block;
-          height: 40px;
+          height: 36.36px;
           float: right;
         }
 
@@ -169,9 +174,9 @@ label {
           width: 100%;
           background: rgba(255,233,214,0.6) url(../images/select-arrow-close.png) 98% center no-repeat;
           display: block;
-          border: 2px solid rgba(255,233,214,0.6) ;
+          border: 2px solid rgba(255,233,214,0.6);
           border-radius: 8px;
-          height: 40px;
+          height: 36.36px;
           float: right;
         }
 
@@ -283,18 +288,17 @@ label {
       display: inline;
       font-size: 1em;
       color: #F2F2F2;
-      background: rgba(255,233,214,0.6);
       padding-top: 0px;
-      padding-left: 4px;
+      padding-left: 1px;
       padding-right: 4px;
       border-radius: 6px;
       padding-bottom: 0;
-      border: 2px solid white;
+      margin-left: -21px;
     }
 
     .checked {
       color: #3E5054;
-      border: 2px solid #3E5054;
+/*      border: 2px solid #3E5054;*/
       transition: all .3s;
     }
 
@@ -333,8 +337,7 @@ label {
     }
 
     .bg-flipped {
-      opacity: 0;
-      z-index: -1;
+      display: none;
     }
 
     .dot {
@@ -350,7 +353,58 @@ label {
 
     .d-flipped {
       opacity: 1;
+      z-index: 2;
+    }
+
+    /**** alternate checkbox ***/
+
+    .custom-checkbox input {
+      margin-left: -25px;
+      width: 25px;
+      height: 20px;
+      opacity: 0;
+    }
+
+    .check-container {
+      display: inline;
+    }
+
+    .background {
+      display: inline;
+      margin-left: -27.5px;
+      margin-bottom: -5px;
+      transition: all .3s;
+    }
+
+    .bg-normal {
+      display: inline;
+      opacity: 1;
       z-index: 1;
+    }
+
+    .bg-flipped {
+      display: inline;
+      display: none;
+    }
+
+    .check {
+      display: inline;
+      margin-bottom: -5px;
+      transition: all .3s;
+    }
+
+    .ch-normal {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .ch-flipped {
+      margin-top: 7px;
+      margin-right: 3px;
+      float: left;
+      opacity: 1;
+      z-index: 2;
+      color: #3E5054;
     }
 
 button {

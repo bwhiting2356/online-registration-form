@@ -111,36 +111,78 @@ function tamingselect()
 	}
 }
 
-function custom_checkbox() 
-{
-	var hidden_inputs = document.getElementsByClassName("hidden-checkbox-icon");
-	for (var i = 0; i < hidden_inputs.length; i++) {
-		hidden_inputs[i].onclick = function() {
-			var related_checkmark = this.parentNode.firstElementChild;
-			if (this.checked == true) {
-			  related_checkmark.classList.add("checked");
-			} else {
-			  related_checkmark.classList.remove("checked");
-			}
+// function custom_checkbox() 
+// {
+// 	var hidden_inputs = document.getElementsByClassName("hidden-checkbox-icon");
+// 	for (var i = 0; i < hidden_inputs.length; i++) {
+// 		hidden_inputs[i].onclick = function() {
+// 			var related_checkmark = this.parentNode.firstElementChild;
+// 			if (this.checked == true) {
+// 			  related_checkmark.classList.add("checked");
+// 			} else {
+// 			  related_checkmark.classList.remove("checked");
+// 			}
 			
+// 		}
+// 	}
+
+// 	for (var i = 0; i < hidden_inputs.length; i++) {
+// 		var related_checkmark = hidden_inputs[i].parentNode.firstElementChild;
+// 			if (hidden_inputs[i].checked == true) {
+// 			  related_checkmark.classList.add("checked");
+// 			} else {
+// 			  related_checkmark.classList.remove("checked");
+// 			}
+// 	}
+
+// }
+
+
+function update_checkmark(grandparent_div) {
+	var related_check = grandparent_div.firstElementChild;
+	var related_bg = grandparent_div.children[1];
+	var related_input = grandparent_div.children[2];
+	console.log(grandparent_div);
+	console.log("related bg");
+	console.log(related_bg);
+	if (related_input.checked == true) {
+	  for (var i = 0; i < related_check.children.length; i++) {
+	  	related_check.children[i].classList.add("ch-flipped");
+	  	related_check.children[i].classList.remove("ch-normal");
+	  }
+	  related_bg.classList.add("bg-flipped");
+	  related_bg.classList.remove("bg-normal");
+	} else {
+	  for (var i = 0; i < related_check.children.length; i++) {
+	  	related_check.children[i].classList.add("ch-normal");
+	  	related_check.children[i].classList.remove("ch-flipped");
+	  }
+	  related_bg.classList.add("bg-normal");
+	  related_bg.classList.remove("bg-flipped");
+	}
+
+}
+
+function custom_checkbox2() 
+{
+
+	var checkbox_icons = document.getElementsByClassName("hidden-checkbox-icon");
+	for (var i = 0; i < checkbox_icons.length; i++) {
+		checkbox_icons[i].onclick = function() {
+			for (var j = 0; j < checkbox_icons.length; j++) {
+				update_checkmark(checkbox_icons[j].parentNode);
+			}
 		}
 	}
 
-	for (var i = 0; i < hidden_inputs.length; i++) {
-		var related_checkmark = hidden_inputs[i].parentNode.firstElementChild;
-			if (hidden_inputs[i].checked == true) {
-			  related_checkmark.classList.add("checked");
-			} else {
-			  related_checkmark.classList.remove("checked");
-			}
+	for (var j = 0; j < checkbox_icons.length; j++) {
+		update_checkmark(checkbox_icons[j].parentNode);
 	}
-
 }
 
 
 function update_dot(grandparent_div) {
 	var related_dot = grandparent_div.children[0].children[0];
-	console.log(related_dot);
 	var related_bg = grandparent_div.children[0].children[1];
 	var related_input = grandparent_div.children[1];
 	if (related_input.checked == true) {
@@ -176,6 +218,7 @@ function custom_radio_button()
 window.onload=function()
 {
 	tamingselect();
-	custom_checkbox();
+	// custom_checkbox();
+	custom_checkbox2();
 	custom_radio_button();
 }

@@ -17,8 +17,8 @@
         <h1>Signup for our newsletter</h1>
         <p>Get the latest news on how your code is doing right in your inbox</p>
       </div>
-      <hr size="5" class="thick" color="black">
-      <hr size="2" color="black">
+      <hr size="5" class="thick" color="#383838">
+      <hr size="2" color="#383838">
       <form class="signup">
         <fieldset class="contact-info">
           <legend><h2>Contact Information</h2></legend>
@@ -106,12 +106,60 @@
             <input type="text" id="zip-code" pattern="\d*" maxlength="5">
           <div>
         </fieldset>
-        <hr size="2" color="black">
+        <hr size="2" color="383838">
         <fieldset class="newsletter-prefs">
           <legend><h2>Newsletter</h2></legend>
           <label class="input-group-label">Select the newsletters you would like to receive</label>
           <div class="input-group">
             <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              <input type="checkbox" id="html-news" value="newsletter-html" name="user_cssnews" checked class="hidden-checkbox-icon">
+              <label for="html-news">HTML News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              <input type="checkbox" id="html-news" value="newsletter-css" name="user_htmlnews" class="hidden-checkbox-icon">
+              <label for="css-news">CSS News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              <input type="checkbox" id="js-news" value="newsletter-js" name="user_jsnews" class="hidden-checkbox-icon">
+              <label for="js-news">JavaScript News</label>
+            </div>
+
+
+
+
+
+
+<!--             <div class="custom-checkbox">
               <div class="checkmark">&#x2713;</div>
               <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked class="hidden-checkbox-icon">
               <label for="html-news">HTML News</label>
@@ -125,17 +173,18 @@
               <div class="checkmark">&#x2713;</div>
               <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews" class="hidden-checkbox-icon">
               <label for="html-news">JavaScript News</label>
-            </div>
+            </div> -->
           </div>
           <label class="input-group-label">Newsletter format</label>
             <div class="custom-radio-button">
               <div class="dot-container">
                 <svg class="dot d-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
-                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
                 </svg>
                 <svg class="background bg-normal" height="24" width="24">
-                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)rgba(255,233,214,0.6)" /> 
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
                 </svg>
               </div>
               <input type="radio" id="html" value="html" name="format" checked class="hidden-rbutton-icon">
@@ -145,7 +194,8 @@
               <div class="dot-container">
                 <svg class="dot d-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
-                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
                 </svg>
                 <svg class="background bg-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
@@ -159,6 +209,7 @@
               <div class="dot-container">
                 <svg class="dot d-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
                   <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
                 </svg>
                 <svg class="background bg-normal" height="24" width="24">
@@ -172,10 +223,11 @@
               <div class="dot-container">
                 <svg class="dot d-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
                   <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
                 </svg>
                 <svg class="background bg-normal" height="24" width="24">
-                  <circle cx="12" cy="12" r="10" stroke="#F2F2F2" stroke-width="2" fill="#F2F2F2" /> 
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
                 </svg>
               </div>
               <input type="radio" id="html" value="html" name="frequency" class="hidden-rbutton-icon">
@@ -184,10 +236,11 @@
               <div class="dot-container">
                 <svg class="dot d-normal" height="24" width="24">
                   <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
                   <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
                 </svg>
                 <svg class="background bg-normal" height="24" width="24">
-                  <circle cx="12" cy="12" r="10" stroke="#F2F2F2" stroke-width="2" fill="#F2F2F2" /> 
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
                 </svg>
               </div>
               <input type="radio" id="html" value="html" name="frequency" checked class="hidden-rbutton-icon">
