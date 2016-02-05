@@ -80,7 +80,8 @@ label {
         CONTACT INFO
     *******************************/
 
-    .contact-item input {
+    .contact-item input, 
+    .contact-item select {
       background: rgba(255,233,214,0.6);
       border: 2px solid rgba(255,233,214,0.6);
       border-radius: 8px;
@@ -450,7 +451,8 @@ footer {
     margin: auto;
   }
 
-  .contact-item input, 
+  .contact-item input,
+  .contact-item select, 
   .dropcontainer ul,
   .trigger, 
   .activetrigger, 
