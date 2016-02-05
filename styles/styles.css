@@ -321,14 +321,14 @@ label {
     }
 
     .custom-checkbox input {
-      margin-left: -25px;
+      margin-left: 0;
       width: 25px;
       height: 20px;
-      opacity: 0;
+      opacity: 1;
     }
 
     .check-container {
-      display: inline;
+      display: none;
     }
 
     .background {
@@ -373,14 +373,14 @@ label {
     *****************************/
 
     .custom-radio-button input {
-      margin-left: -25px;
+      margin-left: 0;
       width: 25px;
       height: 20px;
-      opacity: 0;
+      opacity: 1;
     }
 
     .dot-container {
-      display: inline;
+      display: none;
     }
 
     .dot {

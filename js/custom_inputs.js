@@ -172,6 +172,8 @@ function custom_checkbox()
 	// bind function to make correct state on click
 	var checkbox_icons = document.getElementsByClassName("hidden-checkbox-icon");
 	for (var i = 0; i < checkbox_icons.length; i++) {
+		checkbox_icons[i].style.opacity=0;
+		checkbox_icons[i].style.marginLeft="-25px";
 		checkbox_icons[i].onclick = function() {
 			for (var j = 0; j < checkbox_icons.length; j++) {
 				update_checkmark(checkbox_icons[j].parentNode);
@@ -182,6 +184,13 @@ function custom_checkbox()
 	// make correct state at the beginning
 	for (var j = 0; j < checkbox_icons.length; j++) {
 		update_checkmark(checkbox_icons[j].parentNode);
+	}
+
+	// unhide check-containers
+	var check_containers = document.getElementsByClassName("check-container");
+	for (var i = 0; i < check_containers.length; i++) {
+
+		check_containers[i].style.display="inline";
 	}
 }
 
@@ -209,7 +218,10 @@ function custom_radio_button()
 	
 	// bind function to make correct state on click
 	var radio_bttn_icons = document.getElementsByClassName("hidden-rbutton-icon");
+
 	for (var i = 0; i < radio_bttn_icons.length; i++) {
+		radio_bttn_icons[i].style.opacity=0;
+		radio_bttn_icons[i].style.marginLeft="-25px";
 		radio_bttn_icons[i].onclick = function() {
 			for (var j = 0; j < radio_bttn_icons.length; j++) {
 				update_dot(radio_bttn_icons[j].parentNode);
@@ -220,6 +232,14 @@ function custom_radio_button()
 	// make correct state at the beginning
 	for (var j = 0; j < radio_bttn_icons.length; j++) {
 		update_dot(radio_bttn_icons[j].parentNode);
+	}
+
+	// unhide dot containers
+
+	var dot_containers = document.getElementsByClassName("dot-container");
+	for (var i = 0; i < dot_containers.length; i++) {
+
+		dot_containers[i].style.display="inline";
 	}
 }
 
