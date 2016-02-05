@@ -113,8 +113,7 @@ function tamingselect()
 
 function custom_checkbox() 
 {
-	var checkmark_icons = document.getElementsByClassName("checkmark");
-	var hidden_inputs = document.getElementsByClassName("hidden-icon");
+	var hidden_inputs = document.getElementsByClassName("hidden-checkbox-icon");
 	for (var i = 0; i < hidden_inputs.length; i++) {
 		hidden_inputs[i].onclick = function() {
 			var related_checkmark = this.parentNode.firstElementChild;
@@ -138,8 +137,45 @@ function custom_checkbox()
 
 }
 
+
+function update_dot(grandparent_div) {
+	var related_dot = grandparent_div.children[0].children[0];
+	console.log(related_dot);
+	var related_bg = grandparent_div.children[0].children[1];
+	var related_input = grandparent_div.children[1];
+	if (related_input.checked == true) {
+	  related_dot.classList.add("d-flipped");
+	  related_dot.classList.remove("d-normal");
+	  related_bg.classList.add("bg-flipped");
+	  related_bg.classList.remove("bg-normal");
+	} else {
+	  related_dot.classList.add("d-normal");
+	  related_dot.classList.remove("d-flipped");
+	  related_bg.classList.add("bg-normal");
+	  related_bg.classList.remove("bg-flipped");
+	}
+
+}
+
+function custom_radio_button() 
+{
+	var radio_bttn_icons = document.getElementsByClassName("hidden-rbutton-icon");
+	for (var i = 0; i < radio_bttn_icons.length; i++) {
+		radio_bttn_icons[i].onclick = function() {
+			for (var j = 0; j < radio_bttn_icons.length; j++) {
+				update_dot(radio_bttn_icons[j].parentNode);
+			}
+		}
+	}
+
+	for (var j = 0; j < radio_bttn_icons.length; j++) {
+		update_dot(radio_bttn_icons[j].parentNode);
+	}
+}
+
 window.onload=function()
 {
 	tamingselect();
 	custom_checkbox();
+	custom_radio_button();
 }

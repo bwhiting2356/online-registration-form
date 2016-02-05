@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>Responsive Layout Demo </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styles2.css">
-    <script type='text/javascript' src='js/select_dropdown.js'></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script type='text/javascript' src='js/custom_inputs.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,700' rel='stylesheet' type='text/css'>
   </head>
-  <header>
+  <header class="header">
     <h1>THE CODE REVIEW</h1>
   </header>
   <body>
@@ -30,7 +30,7 @@
           <div class="contact-item">
             <label for="email">Email Address</label>
             <input type="email" id="email" class="contact-input" 
-            name="email-address"  placeholder="Required"required>
+            name="email-address"  placeholder="Required" required>
           </div>
           <div class="contact-item">
             <label for="phone">Phone:</label>
@@ -113,26 +113,86 @@
           <div class="input-group">
             <div class="custom-checkbox">
               <div class="checkmark">&#x2713;</div>
-              <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked class="hidden-icon">
+              <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked class="hidden-checkbox-icon">
               <label for="html-news">HTML News</label>
             </div>
             <div class="custom-checkbox">
               <div class="checkmark">&#x2713;</div>
-              <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews" class="hidden-icon">
+              <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews" class="hidden-checkbox-icon">
               <label for="html-news">CSS News</label>
             </div>
             <div class="custom-checkbox">
               <div class="checkmark">&#x2713;</div>
-              <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews" class="hidden-icon">
+              <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews" class="hidden-checkbox-icon">
               <label for="html-news">JavaScript News</label>
             </div>
           </div>
           <label class="input-group-label">Newsletter format</label>
-          <div class="input-group">
-            <input type="radio" id="html" value="html" name="format" checked>
-            <label for="html">HTML</label><br>
-            <input type="radio" id="plain-text" value="plain-text" name="format">
-            <label for="plain-text">Plain text</label><br>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="html" value="html" name="format" checked class="hidden-rbutton-icon">
+              <label for="html">HTML</label>
+            </div>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="plain-text" value="plain-text" name="format" class="hidden-rbutton-icon">
+              <label for="plain-text">Plain text</label>
+            </div>
+          <label class="input-group-label">Select how often you would like to receive our newsletter</label>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="html" value="html" name="frequency" class="hidden-rbutton-icon">
+              <label for="html">Daily</label>
+            </div>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="#F2F2F2" stroke-width="2" fill="#F2F2F2" /> 
+                </svg>
+              </div>
+              <input type="radio" id="html" value="html" name="frequency" class="hidden-rbutton-icon">
+              <label for="html">Weekly</label>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="#F2F2F2" stroke-width="2" fill="#F2F2F2" /> 
+                </svg>
+              </div>
+              <input type="radio" id="html" value="html" name="frequency" checked class="hidden-rbutton-icon">
+              <label for="html">Monthly</label>
+            </div>
           </div>
           <div class="input-group"> 
             <label for="other-topics">Other topics you'd like to hear about</label>
