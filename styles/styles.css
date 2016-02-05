@@ -143,20 +143,21 @@ label {
         *****************************/
 
         .dropcontainer {
-          position:relative;
+          /*position:relative;*/
 /*          color: #3E5054;*/
         } 
 
         .trigger {
+          position:relative;
           background: rgba(255,233,214,0.6);
           border: 2px solid rgba(255,233,214,0.6);
           border-radius: 8px;
           outline: none;
           width: 100%;
-          padding: 10px;
+/*          padding: 10px;*/
           transition: border 0.3s;
           color: #3E5054;
-          padding: 10px;
+          padding: 5px;
           background: rgba(255,233,214,0.6) url(../images/select-arrow-open.png) 98% center no-repeat;
           display: block;
           height: 36.36px;
@@ -169,8 +170,8 @@ label {
         }
 
         .activetrigger {
-          color: #777;
-          padding: 10px;
+          color: #3E5054;
+          padding: 5px;
           width: 100%;
           background: rgba(255,233,214,0.6) url(../images/select-arrow-close.png) 98% center no-repeat;
           display: block;
@@ -190,14 +191,20 @@ label {
           color: #777;
         }
 
+        .dropcontainer {
+          padding-top: 5px;
+        }
+
         .dropcontainer ul {
-          padding-top: 8px;
-          border: 2px solid white;
+          margin-top: -18px;
+          border-top: 2px solid white;
+          border-left: 2px solid rgba(255,233,214,0.6);
+          border-right: 2px solid rgba(255,233,214,0.6);
+          border-bottom: 2px solid rgba(255,233,214,0.6); 
           border-radius: 8px;
-          border-top: none;
           background: rgba(255,233,214,0.6);
           list-style-type: none;
-          padding: 10px;
+          padding: 5px;
           margin: 0;
           width: 100%;
           z-index: 100;
@@ -207,7 +214,8 @@ label {
         }
 
         .dropcontainer ul li {
-          padding: 5px;
+          padding: 4px 0;
+          border-bottom: solid black 0.25px;
           color: #3E5054;
           -webkit-transition: all 0.5s ease; 
           -moz-transition: all 0.5s ease; 
@@ -298,7 +306,6 @@ label {
 
     .checked {
       color: #3E5054;
-/*      border: 2px solid #3E5054;*/
       transition: all .3s;
     }
 
