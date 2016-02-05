@@ -1,21 +1,44 @@
+/*************************************
+    GENERAL STYLES
+*************************************/
+
 * {
   box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  font-family: "Open Sans";
-  max-width: 50vw;
+html {
+  font-family: "Crimson Text";
+  font-size: 1em;
+  background: rgba(255,233,214,0.07);
 }
 
-header {
-  padding: 15px 0;
-  background-color: black;
+a {
+  text-decoration: none;
+  color: #3E5054;
 }
 
-header h1 {
+/*************************************
+    HEADER
+*************************************/
+
+.header {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background-color: #3E5054;
   text-align: center;
   color: white;
 }
+
+.header h1 {
+  color: white;
+}
+
+
+/*************************************
+    BODY
+*************************************/
 
 .wrapper {
   padding: 0 20px;
@@ -23,84 +46,412 @@ header h1 {
 
 .signup-info {
   text-align: center;
+  color: #383838;
 }
 
+.signup-info h1 {
+  line-height: 1.4em;
+}
+
+.thick {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  border: 2.5px solid #383838;
+}
+
+.thin {
+  border: 1px solid #383838;
+}
+
+/*************************************
+    FORM
+*************************************/
+
 fieldset {
-  padding: 0;
+  padding: 0 0 10px 0;
   margin: 0;
   border: none;
 }
 
 legend {
-  padding-top: 5px;
-  margin-bottom: 20px;
+  padding-top: 2px; 
+  color: #383838;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.contact {
-  display: flex;
+label {
+  color: #3E5054;
 }
 
-/*************************************
-Placeholder Text Style
-*************************************/
+    /*******************************
+        CONTACT INFO
+    *******************************/
 
-input::-webkit-input-placeholder {
-  text-align: right;
-  font-style: italic;
-  padding-right: 5px;
-}
-input::-moz-placeholder {
-  text-align: right;
-  font-style: italic;
-  padding-right: 5px;
-}
-input:-moz-placeholder {   /* Older versions of Firefox */
-  text-align: right;
-  font-style: italic;
-  padding-right: 5px;
-}
-input:-ms-input-placeholder { 
-  text-align: right;
-  font-style: italic;
-  padding-right: 5px;
-}
+    .contact-item input, 
+    .contact-item select {
+      background: rgba(255,233,214,0.6);
+      border: 2px solid rgba(255,233,214,0.6);
+      border-radius: 8px;
+      outline: none;
+      width: 100%;
+      padding: 5px;
+      transition: border .3s;
+      font-family: "Crimson Text";
+      font-size: 1em;
+      color: #3E5054;
+    }
 
-textarea {
-  width: 100%;
-}
+    .contact-item {
+      padding: 5px 0;
+    }
+
+    .contact-item input:focus {
+      border: 2px solid #3E5054;
+    }
+
+    .contact-item label {
+      float: left;
+      padding-left: 2px;
+      margin-top: 5px;
+    }
+
+    #zip-code {
+      width: 150px;
+      margin-right: calc(100% - 150px);
+    }
+
+        /*****************************
+            PLACEHOLDER TEXT
+        *****************************/
+
+        input::-webkit-input-placeholder {
+          text-align: right;
+          font-style: italic;
+          padding-right: 3px;
+        }
+
+        input::-moz-placeholder {
+          text-align: right;
+          font-style: italic;
+          padding-right: 3px;
+        }
+
+        input:-moz-placeholder {   /* Older versions of Firefox */
+          text-align: right;
+          font-style: italic;
+          padding-right: 3px;
+        }
+
+        input:-ms-input-placeholder { 
+          text-align: right;
+          font-style: italic;
+          padding-right: 3px;
+        }
+
+        /*****************************
+            DROPDOWN MENU
+        *****************************/
+
+
+        .trigger {
+          position:relative;
+          background: rgba(255,233,214,0.6);
+          border: 2px solid rgba(255,233,214,0.6);
+          border-radius: 8px;
+          outline: none;
+          width: 100%;
+          transition: border 0.3s;
+          color: #3E5054;
+          padding: 5px;
+          background: rgba(255,233,214,0.6) url(../images/select-arrow-open.png) 98% center no-repeat;
+          display: block;
+          height: 36.36px;
+          float: right;
+        }
+
+        .trigger:hover {
+          color: #777;
+          background: rgba(255,233,214,0.6) url(../images/select-arrow-open.png) 98% center no-repeat;
+        }
+
+        .activetrigger {
+          color: #3E5054;
+          padding: 5px;
+          width: 100%;
+          background: rgba(255,233,214,0.6) url(../images/select-arrow-close.png) 98% center no-repeat;
+          display: block;
+          border: 2px solid rgba(255,233,214,0.6);
+          border-radius: 8px;
+          height: 36.36px;
+          float: right;
+        }
+
+        .activetrigger:hover {
+          background: rgba(255,233,214,0.6) url(../images/select-arrow-close.png) 98% center no-repeat;
+          color: #777;
+        }
+
+        .activetrigger:active {
+          background: rgba(255,233,214,0.6) url(../images/select-arrow-close.png) 98% center no-repeat;
+          color: #777;
+        }
+
+        .dropcontainer {
+          padding-top: 5px;
+        }
+
+        .dropcontainer ul {
+          margin-top: -18px;
+          border-top: 2px solid white;
+          border-left: 2px solid rgba(255,233,214,0.6);
+          border-right: 2px solid rgba(255,233,214,0.6);
+          border-bottom: 2px solid rgba(255,233,214,0.6); 
+          border-radius: 8px;
+          background: rgba(255,233,214,0.6);
+          list-style-type: none;
+          padding: 5px;
+          margin: 0;
+          width: 100%;
+          z-index: 100;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .dropcontainer ul li {
+          padding: 4px 0;
+          border-bottom: solid black 0.25px;
+          color: #3E5054;
+          -webkit-transition: all 0.5s ease; 
+          -moz-transition: all 0.5s ease; 
+          -o-transition: all 0.5s ease; 
+          transition: all 0.5s ease;
+        }
+
+        .dropcontainer ul li:hover {
+          background: #f5f5f5;
+          outline: none;
+        }
+
+        .dropcontainer ul li:first-child {
+          display: none;
+        }
+
+        .dropcontainer ul li:last-child {
+          border-bottom: none;
+        }
+
+        .dropdownhidden {
+          display: none;
+        }
+
+        .dropdownvisible {
+          height: 200px;
+          overflow-y: scroll;
+        }
+
+        .contact-zipcode-adjust {
+          margin-top: -200px;
+        }
+
+        .contact-zipcode-normal {
+          margin-top: 0;
+        }
+
+    /*******************************
+        NEWSLETTER PREFERENCES
+    *******************************/
+
+
+    .newsletter-prefs label, 
+    .newsletter-prefs  {
+      margin-left: 2px;
+    }
+    .newsletter-prefs input, 
+    textarea {
+      margin: 8px 0;
+    }
+
+    .newsletter-prefs label:nth-child(2) {
+      margin-top: -5px;
+    }
+
+    .input-group-label {
+      margin-top: 10px;
+      display: table;
+      clear: both;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+      background: rgba(255,233,214,0.6);
+      border: 2px solid rgba(255,233,214,0.6);
+      border-radius: 8px;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      transition: border .3s;
+    }
+
+    textarea:focus {
+      border: 2px solid #0C1759;
+    }
+
+    /*****************************
+            CHECKBOX STYLE
+    *****************************/
+
+    .checkmark {
+      display: inline;
+      font-size: 1em;
+      color: #F2F2F2;
+      padding-top: 1px;
+      padding-left: 1px;
+      padding-right: 4px;
+      border-radius: 6px;
+      padding-bottom: 0;
+      margin-left: -21px;
+    }
+
+    .checked {
+      color: #3E5054;
+      transition: all .3s;
+    }
+
+    .custom-checkbox input {
+      margin-left: 0;
+      width: 25px;
+      height: 20px;
+      opacity: 1;
+    }
+
+    .check-container {
+      display: none;
+    }
+
+    .background {
+      display: inline;
+      margin-left: -27.5px;
+      margin-bottom: -5px;
+      transition: all .3s;
+    }
+
+    .bg-normal {
+      display: inline;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .bg-flipped {
+      display: inline;
+      display: none;
+    }
+
+    .check {
+      display: inline;
+      transition: all .3s;
+    }
+
+    .ch-normal {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .ch-flipped {
+      margin-top: 8px;
+      margin-right: 3px;
+      float: left;
+      opacity: 1;
+      z-index: 2;
+      color: #3E5054;
+    }
+
+    /*****************************
+           RADIO BUTTON STYLE
+    *****************************/
+
+    .custom-radio-button input {
+      margin-left: 0;
+      width: 25px;
+      height: 20px;
+      opacity: 1;
+    }
+
+    .dot-container {
+      display: none;
+    }
+
+    .dot {
+      display: inline;
+      margin-bottom: -5px;
+      transition: all .3s;
+    }
+
+    .d-normal {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .d-flipped {
+      opacity: 1;
+      z-index: 2;
+    }
 
 button {
   width: 100%;
   text-align: center;
-  padding: 20px;
+  color: white;
+  padding: 10px;
   font-size: 2em;
+  background: #60A5B2;
+  border: none;
+  border-radius: 5px;
 }
+
+button:hover {
+  opacity: 0.75;
+}
+
+/*************************************
+    FOOTER
+*************************************/
 
 footer {
   text-align: center;
   padding: 20px;
 }
 
+/*************************************
+   MEDIA QUERIES
+*************************************/
+
 @media screen and (min-width: 760px) {
   .wrapper {
-    width: 400px;
+    width: 600px;
     margin: auto;
-    padding: 0;
   }
 
-  .label-div {
-    width: 20%;
-    display: inline;
+  .contact-item input,
+  .contact-item select, 
+  .dropcontainer ul,
+  .trigger, 
+  .activetrigger, 
+  .contact-zipcode-normal input,
+  .contact-zipcode-adjust input {
+    float: right;
+    width: 80%;
   }
 
-  .contact-input {
-    width: 60%;
-    display: inline;
+  .contact-item:after {
+    content: " ";
+    display: table;
+    clear: both;
   }
 
   #zip-code {
-    width: 180px;
+    width: 30%;
+    margin-right: 50%;
   }
-
-
 }

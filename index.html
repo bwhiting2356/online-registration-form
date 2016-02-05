@@ -2,26 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Responsive Layout Demo </title>
+    <title>Responsive Layout Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styles2.css">
-    <script type='text/javascript' src='js/select_dropdown.js'></script>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script type='text/javascript' src='js/custom_inputs.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,700' rel='stylesheet' type='text/css'>
   </head>
-  <header>
+  <body>
+  <header class="header">
     <h1>THE CODE REVIEW</h1>
   </header>
-  <body>
     <div class="wrapper">
       <div class="signup-info">
         <h1>Signup for our newsletter</h1>
         <p>Get the latest news on how your code is doing right in your inbox</p>
       </div>
-      <hr size="5" class="thick" color="black">
-      <hr size="2" color="black">
+      <hr class="thick">
+      <hr class="thin">
       <form class="signup">
         <fieldset class="contact-info">
-          <legend><h2>Contact Information</h2></legend>
+          <legend>Contact Information</legend>
           <div class="contact-item">
             <label for="name">Full Name</label>
             <input type="text" id="name" class="contact-input" 
@@ -30,7 +31,7 @@
           <div class="contact-item">
             <label for="email">Email Address</label>
             <input type="email" id="email" class="contact-input" 
-            name="email-address"  placeholder="Required"required>
+            name="email-address"  placeholder="Required" required>
           </div>
           <div class="contact-item">
             <label for="phone">Phone:</label>
@@ -44,8 +45,8 @@
             <label for="city">City</label>
             <input type="text" id="city" name="city-name">
           </div>
-          <div class="contact-item">
-            <label class="label" for="state">State</label>
+          <div class="contact-item" id="state">
+            <label class="label">State</label>
             <select id="select-dropdown" class="turnintodropdown" name="state-name">
               <option value="" disabled selected>Choose State</option>
               <option value="AL">Alabama</option>
@@ -104,29 +105,133 @@
           <div id="zipcode-div" class="contact-item">
             <label id="zipcode-label" for="zip-code">Zip Code</label>
             <input type="text" id="zip-code" pattern="\d*" maxlength="5">
-          <div>
+          </div>
         </fieldset>
-        <hr size="2" color="black">
+        <hr class="thin">
         <fieldset class="newsletter-prefs">
-          <legend><h2>Newsletter</h2></legend>
+          <legend>Newsletter</legend>
           <label class="input-group-label">Select the newsletters you would like to receive</label>
           <div class="input-group">
-            <input type="checkbox" id="html-news" value="newsletter-html" name="user_htmlnews" checked>
-            <label for="html-news">HTML News</label><br>
-            <input type="checkbox" id="css-news" value="newsletter-css" name="user_cssnews">
-            <label for="html-news">CSS News</label><br>
-            <input type="checkbox" id="javascript-news" value="newsletter-javascript" name="user_jsnews">
-            <label for="html-news">JavaScript News</label><br>
+            <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              </div>
+              <input type="checkbox" id="html-news" value="newsletter-html" name="user_cssnews" checked class="hidden-checkbox-icon">
+              <label for="html-news">HTML News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              </div>
+              <input type="checkbox" id="css-news" value="newsletter-css" name="user_htmlnews" class="hidden-checkbox-icon">
+              <label for="css-news">CSS News</label>
+            </div>
+            <div class="custom-checkbox">
+              <div class="check-container">
+                <div class="check ch-normal">
+                  <svg height="24" width="24">
+                    <rect width="19" height="19" x="3" y="2" stroke="#3E5054" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                  </svg>
+                  <div class="checkmark">&#x2713;</div>
+                </div>
+                <svg class="background bg-normal" height="24" width="24">
+                  <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
+                </svg>
+              </div>
+              <input type="checkbox" id="js-news" value="newsletter-js" name="user_jsnews" class="hidden-checkbox-icon">
+              <label for="js-news">JavaScript News</label>
+            </div>
           </div>
           <label class="input-group-label">Newsletter format</label>
-          <div class="input-group">
-            <input type="radio" id="html" value="html" name="format" checked>
-            <label for="html">HTML</label><br>
-            <input type="radio" id="plain-text" value="plain-text" name="format">
-            <label for="plain-text">Plain text</label><br>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="html" value="html" name="format" checked class="hidden-rbutton-icon">
+              <label for="html">HTML</label>
+            </div>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="plain-text" value="plain-text" name="format" class="hidden-rbutton-icon">
+              <label for="plain-text">Plain text</label>
+            </div>
+          <label class="input-group-label">Select how often you would like to receive our newsletter</label>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="daily" value="daily" name="frequency" class="hidden-rbutton-icon">
+              <label for="daily">Daily</label>
+            </div>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="weekly" value="weekly" name="frequency" class="hidden-rbutton-icon">
+              <label for="weekly">Weekly</label>
+            <div class="custom-radio-button">
+              <div class="dot-container">
+                <svg class="dot d-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="5.5" stroke="#3E5054" stroke-width="0" fill="#3E5054" />
+                  <circle cx="12" cy="12" r="7.5" stroke="rgba(255,233,214,0.6)" stroke-width="4" fill="none"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3E5054" stroke-width="2" fill="none" />
+                </svg>
+                <svg class="background bg-normal" height="24" width="24">
+                  <circle cx="12" cy="12" r="10" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" /> 
+                </svg>
+              </div>
+              <input type="radio" id="monthly" value="monthly" name="frequency" checked class="hidden-rbutton-icon">
+              <label for="monthly">Monthly</label>
+            </div>
           </div>
           <div class="input-group"> 
-            <label for="other-topics">Other topics you'd like to hear about</label>
+            <label class="input-group-label" for="other-topics">Other topics you'd like to hear about</label>
             <textarea id="other-topics"></textarea><br>
           </div>
         </fieldset>
