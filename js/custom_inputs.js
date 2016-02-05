@@ -10,8 +10,6 @@ function tamingselect()
 	var ts_triggeroff='trigger';			// class for the inactive trigger link
 	var ts_dropdownclosed='dropdownhidden'; // closed dropdown
 	var ts_dropdownopen='dropdownvisible';	// open dropdown
-	var normal='contact-zipcode-normal';					// normal margin for zipcode
-	var adjust='contact-zipcode-adjust';					// adjust so that dropdown doesn't displace zipcode
 
 	var count=0;
 	var toreplace=new Array();
@@ -28,7 +26,7 @@ function tamingselect()
 
 	var trigger=document.createElement('a');
 	ts_addclass(trigger,ts_triggeroff);
-	trigger.href='#';
+	trigger.href='#state';
 
 	var zipcode=document.getElementById('zipcode-div');
 
@@ -56,7 +54,6 @@ function tamingselect()
 			this.elm.value=this.v;
 			ts_swapclass(this.istrigger,ts_triggeron,ts_triggeroff);
 			ts_swapclass(this.parentNode,ts_dropdownopen,ts_dropdownclosed);
-			ts_swapclass(zipcode, normal, adjust);
 			this.istrigger.firstChild.nodeValue=this.firstChild.firstChild.nodeValue;
 			return false;
 		}
@@ -139,12 +136,18 @@ function tamingselect()
 
 
 function update_checkmark(grandparent_div) {
-	var related_check = grandparent_div.firstElementChild;
-	var related_bg = grandparent_div.children[1];
-	var related_input = grandparent_div.children[2];
-	console.log(grandparent_div);
-	console.log("related bg");
-	console.log(related_bg);
+	var related_check = grandparent_div.firstElementChild.children[0];
+	var related_bg = grandparent_div.firstElementChild.children[1];
+	var related_input = grandparent_div.children[1];
+	// console.log("grandparent_div");
+	// console.log(grandparent_div);
+	// console.log("related_check");
+	// console.log(related_check);
+	// console.log("related_bg");
+	// console.log(related_bg);
+	// console.log("related_input");
+	// console.log(related_input);
+
 	if (related_input.checked == true) {
 	  for (var i = 0; i < related_check.children.length; i++) {
 	  	related_check.children[i].classList.add("ch-flipped");
@@ -163,9 +166,10 @@ function update_checkmark(grandparent_div) {
 
 }
 
-function custom_checkbox2() 
+function custom_checkbox() 
 {
 
+	// bind function to make correct state on click
 	var checkbox_icons = document.getElementsByClassName("hidden-checkbox-icon");
 	for (var i = 0; i < checkbox_icons.length; i++) {
 		checkbox_icons[i].onclick = function() {
@@ -175,6 +179,7 @@ function custom_checkbox2()
 		}
 	}
 
+	// make correct state at the beginning
 	for (var j = 0; j < checkbox_icons.length; j++) {
 		update_checkmark(checkbox_icons[j].parentNode);
 	}
@@ -201,6 +206,8 @@ function update_dot(grandparent_div) {
 
 function custom_radio_button() 
 {
+	
+	// bind function to make correct state on click
 	var radio_bttn_icons = document.getElementsByClassName("hidden-rbutton-icon");
 	for (var i = 0; i < radio_bttn_icons.length; i++) {
 		radio_bttn_icons[i].onclick = function() {
@@ -210,6 +217,7 @@ function custom_radio_button()
 		}
 	}
 
+	// make correct state at the beginning
 	for (var j = 0; j < radio_bttn_icons.length; j++) {
 		update_dot(radio_bttn_icons[j].parentNode);
 	}
@@ -218,7 +226,6 @@ function custom_radio_button()
 window.onload=function()
 {
 	tamingselect();
-	// custom_checkbox();
-	custom_checkbox2();
+	custom_checkbox();
 	custom_radio_button();
 }

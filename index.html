@@ -2,26 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Responsive Layout Demo </title>
+    <title>Responsive Layout Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script type='text/javascript' src='js/custom_inputs.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,700' rel='stylesheet' type='text/css'>
   </head>
+  <body>
   <header class="header">
     <h1>THE CODE REVIEW</h1>
   </header>
-  <body>
     <div class="wrapper">
       <div class="signup-info">
         <h1>Signup for our newsletter</h1>
         <p>Get the latest news on how your code is doing right in your inbox</p>
       </div>
-      <hr size="5" class="thick" color="#383838">
-      <hr size="2" color="#383838">
+      <hr class="thick">
+      <hr class="thin">
       <form class="signup">
         <fieldset class="contact-info">
-          <legend><h2>Contact Information</h2></legend>
+          <legend>Contact Information</legend>
           <div class="contact-item">
             <label for="name">Full Name</label>
             <input type="text" id="name" class="contact-input" 
@@ -44,8 +45,8 @@
             <label for="city">City</label>
             <input type="text" id="city" name="city-name">
           </div>
-          <div class="contact-item">
-            <label class="label" for="state">State</label>
+          <div class="contact-item" id="state">
+            <label class="label">State</label>
             <select id="select-dropdown" class="turnintodropdown" name="state-name">
               <option value="" disabled selected>Choose State</option>
               <option value="AL">Alabama</option>
@@ -104,11 +105,11 @@
           <div id="zipcode-div" class="contact-item">
             <label id="zipcode-label" for="zip-code">Zip Code</label>
             <input type="text" id="zip-code" pattern="\d*" maxlength="5">
-          <div>
+          </div>
         </fieldset>
-        <hr size="2" color="383838">
+        <hr class="thin">
         <fieldset class="newsletter-prefs">
-          <legend><h2>Newsletter</h2></legend>
+          <legend>Newsletter</legend>
           <label class="input-group-label">Select the newsletters you would like to receive</label>
           <div class="input-group">
             <div class="custom-checkbox">
@@ -122,6 +123,7 @@
                 <svg class="background bg-normal" height="24" width="24">
                   <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
                 </svg>
+              </div>
               <input type="checkbox" id="html-news" value="newsletter-html" name="user_cssnews" checked class="hidden-checkbox-icon">
               <label for="html-news">HTML News</label>
             </div>
@@ -136,6 +138,7 @@
                 <svg class="background bg-normal" height="24" width="24">
                   <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
                 </svg>
+              </div>
               <input type="checkbox" id="css-news" value="newsletter-css" name="user_htmlnews" class="hidden-checkbox-icon">
               <label for="css-news">CSS News</label>
             </div>
@@ -150,6 +153,7 @@
                 <svg class="background bg-normal" height="24" width="24">
                   <rect width="19" height="19" x="3" y="2" stroke="rgba(255,233,214,0.6)" stroke-width="2" fill="rgba(255,233,214,0.6)" rx="4" ry="4" />
                 </svg>
+              </div>
               <input type="checkbox" id="js-news" value="newsletter-js" name="user_jsnews" class="hidden-checkbox-icon">
               <label for="js-news">JavaScript News</label>
             </div>
@@ -227,7 +231,7 @@
             </div>
           </div>
           <div class="input-group"> 
-            <label for="other-topics">Other topics you'd like to hear about</label>
+            <label class="input-group-label" for="other-topics">Other topics you'd like to hear about</label>
             <textarea id="other-topics"></textarea><br>
           </div>
         </fieldset>

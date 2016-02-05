@@ -49,9 +49,18 @@ a {
   color: #383838;
 }
 
+.signup-info h1 {
+  line-height: 1.4em;
+}
+
 .thick {
   margin-top: 10px;
   margin-bottom: 2px;
+  border: 2.5px solid #383838;
+}
+
+.thin {
+  border: 1px solid #383838;
 }
 
 /*************************************
@@ -66,10 +75,9 @@ fieldset {
 
 legend {
   padding-top: 2px; 
-}
-
-legend h2 {
   color: #383838;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 label {
@@ -145,10 +153,6 @@ label {
             DROPDOWN MENU
         *****************************/
 
-        .dropcontainer {
-          /*position:relative;*/
-/*          color: #3E5054;*/
-        } 
 
         .trigger {
           position:relative;
@@ -157,7 +161,6 @@ label {
           border-radius: 8px;
           outline: none;
           width: 100%;
-/*          padding: 10px;*/
           transition: border 0.3s;
           color: #3E5054;
           padding: 5px;
@@ -270,9 +273,14 @@ label {
       margin: 8px 0;
     }
 
-    .input-group {
-      margin-top: 5px;
-      margin-bottom: 10px;
+    .newsletter-prefs label:nth-child(2) {
+      margin-top: -5px;
+    }
+
+    .input-group-label {
+      margin-top: 10px;
+      display: table;
+      clear: both;
     }
 
     textarea {
@@ -299,7 +307,7 @@ label {
       display: inline;
       font-size: 1em;
       color: #F2F2F2;
-      padding-top: 0px;
+      padding-top: 1px;
       padding-left: 1px;
       padding-right: 4px;
       border-radius: 6px;
@@ -311,62 +319,6 @@ label {
       color: #3E5054;
       transition: all .3s;
     }
-
-    .custom-checkbox input {
-      margin-left: -25px;
-      width: 25px;
-      height: 20px;
-      opacity: 0;
-    }
-
-    /*****************************
-           RADIO BUTTON STYLE
-    *****************************/
-
-    .custom-radio-button input {
-      margin-left: -25px;
-      width: 25px;
-      height: 20px;
-      opacity: 0;
-    }
-
-    .dot-container {
-      display: inline;
-    }
-
-    .background {
-      display: inline;
-      margin-left: -27.5px;
-      margin-bottom: -5px;
-      transition: all .3s;
-    }
-
-    .bg-normal {
-      opacity: 1;
-      z-index: 1;
-    }
-
-    .bg-flipped {
-      display: none;
-    }
-
-    .dot {
-      display: inline;
-      margin-bottom: -5px;
-      transition: all .3s;
-    }
-
-    .d-normal {
-      opacity: 0;
-      z-index: -1;
-    }
-
-    .d-flipped {
-      opacity: 1;
-      z-index: 2;
-    }
-
-    /**** alternate checkbox ***/
 
     .custom-checkbox input {
       margin-left: -25px;
@@ -399,7 +351,6 @@ label {
 
     .check {
       display: inline;
-      margin-bottom: -5px;
       transition: all .3s;
     }
 
@@ -409,12 +360,43 @@ label {
     }
 
     .ch-flipped {
-      margin-top: 7px;
+      margin-top: 8px;
       margin-right: 3px;
       float: left;
       opacity: 1;
       z-index: 2;
       color: #3E5054;
+    }
+
+    /*****************************
+           RADIO BUTTON STYLE
+    *****************************/
+
+    .custom-radio-button input {
+      margin-left: -25px;
+      width: 25px;
+      height: 20px;
+      opacity: 0;
+    }
+
+    .dot-container {
+      display: inline;
+    }
+
+    .dot {
+      display: inline;
+      margin-bottom: -5px;
+      transition: all .3s;
+    }
+
+    .d-normal {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .d-flipped {
+      opacity: 1;
+      z-index: 2;
     }
 
 button {
