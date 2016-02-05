@@ -24,9 +24,9 @@ function tamingselect()
 	hiddenfield.value=select_dropdown.options[0].value;
 	select_dropdown.parentNode.insertBefore(hiddenfield,select_dropdown)
 
-	var trigger=document.createElement('a');
+	var trigger=document.createElement('div');
 	ts_addclass(trigger,ts_triggeroff);
-	trigger.href='#state';
+	// trigger.href='#state';
 
 	var zipcode=document.getElementById('zipcode-div');
 
