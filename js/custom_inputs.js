@@ -3,7 +3,7 @@ function tamingselect()
 	if(!document.getElementById && !document.createTextNode){return;}
 	
 // Classes for the link and the visible dropdown
-	var ts_selectclass='turnintodropdown'; 	// class to identify selects
+	// var ts_selectclass='turnintodropdown'; 	// class to identify selects
 	var ts_listclass='turnintoselect';		// class to identify ULs
 	var ts_boxclass='dropcontainer'; 		// parent element
 	var ts_triggeron='activetrigger'; 		// class for the active trigger link
@@ -12,8 +12,8 @@ function tamingselect()
 	var ts_dropdownopen='dropdownvisible';	// open dropdown
 
 	var count=0;
-	var toreplace=new Array();
-	var sels=document.getElementsByTagName('select');
+	var toreplace=[];
+	// var sels=document.getElementsByTagName('select');
 
 	var select_dropdown=document.getElementById('select-dropdown');
 
@@ -22,20 +22,19 @@ function tamingselect()
 	hiddenfield.type='hidden';
 	hiddenfield.id=select_dropdown.id;
 	hiddenfield.value=select_dropdown.options[0].value;
-	select_dropdown.parentNode.insertBefore(hiddenfield,select_dropdown)
+	select_dropdown.parentNode.insertBefore(hiddenfield,select_dropdown);
 
 	var trigger=document.createElement('a');
 	ts_addclass(trigger,ts_triggeroff);
 	trigger.href='#state';
 
-	var zipcode=document.getElementById('zipcode-div');
+	// var zipcode=document.getElementById('zipcode-div');
 
 	trigger.onclick=function(){
-		ts_swapclass(this,ts_triggeroff,ts_triggeron)
+		ts_swapclass(this,ts_triggeroff,ts_triggeron);
 		ts_swapclass(this.parentNode.getElementsByTagName('ul')[0],ts_dropdownclosed,ts_dropdownopen);
-		ts_swapclass(zipcode, normal, adjust);
 		return false;
-	}
+	};
 
 	trigger.appendChild(document.createTextNode(select_dropdown.options[0].text));
 	select_dropdown.parentNode.insertBefore(trigger,select_dropdown);
@@ -50,13 +49,14 @@ function tamingselect()
 		newa.href='#';
 		newa.appendChild(document.createTextNode(
 		select_dropdown.getElementsByTagName('option')[j].text));
+    /*jshint loopfunc: true */
 		newli.onclick=function(){ 
 			this.elm.value=this.v;
 			ts_swapclass(this.istrigger,ts_triggeron,ts_triggeroff);
 			ts_swapclass(this.parentNode,ts_dropdownopen,ts_dropdownclosed);
 			this.istrigger.firstChild.nodeValue=this.firstChild.firstChild.nodeValue;
 			return false;
-		}
+		};
 		newli.appendChild(newa);
 		replaceUL.appendChild(newli);
 	}
@@ -64,7 +64,7 @@ function tamingselect()
 	var div=document.createElement('div');
 	div.appendChild(replaceUL);
 	ts_addclass(div,ts_boxclass);
-	select_dropdown.parentNode.insertBefore(div,select_dropdown)
+	select_dropdown.parentNode.insertBefore(div,select_dropdown);
 
 	var uls=document.getElementsByTagName('ul');
 	for(var i=0;i<uls.length;i++)
@@ -83,7 +83,7 @@ function tamingselect()
 			newselect.onchange=function()
 			{
 				window.location=this.options[this.selectedIndex].value;
-			}
+			};
 			newform.appendChild(newselect);
 			uls[i].parentNode.insertBefore(newform,uls[i]);
 			toreplace[count]=uls[i];
@@ -104,51 +104,16 @@ function tamingselect()
 	}
 	function ts_addclass(o,c)
 	{
-		if(!ts_check(o,c)){o.className+=o.className==''?c:' '+c;}
+		if(!ts_check(o,c)){o.className+=o.className===''?c:' '+c;}
 	}
 }
-
-// function custom_checkbox() 
-// {
-// 	var hidden_inputs = document.getElementsByClassName("hidden-checkbox-icon");
-// 	for (var i = 0; i < hidden_inputs.length; i++) {
-// 		hidden_inputs[i].onclick = function() {
-// 			var related_checkmark = this.parentNode.firstElementChild;
-// 			if (this.checked == true) {
-// 			  related_checkmark.classList.add("checked");
-// 			} else {
-// 			  related_checkmark.classList.remove("checked");
-// 			}
-			
-// 		}
-// 	}
-
-// 	for (var i = 0; i < hidden_inputs.length; i++) {
-// 		var related_checkmark = hidden_inputs[i].parentNode.firstElementChild;
-// 			if (hidden_inputs[i].checked == true) {
-// 			  related_checkmark.classList.add("checked");
-// 			} else {
-// 			  related_checkmark.classList.remove("checked");
-// 			}
-// 	}
-
-// }
-
 
 function update_checkmark(grandparent_div) {
 	var related_check = grandparent_div.firstElementChild.children[0];
 	var related_bg = grandparent_div.firstElementChild.children[1];
 	var related_input = grandparent_div.children[1];
-	// console.log("grandparent_div");
-	// console.log(grandparent_div);
-	// console.log("related_check");
-	// console.log(related_check);
-	// console.log("related_bg");
-	// console.log(related_bg);
-	// console.log("related_input");
-	// console.log(related_input);
 
-	if (related_input.checked == true) {
+	if (related_input.checked === true) {
 	  for (var i = 0; i < related_check.children.length; i++) {
 	  	related_check.children[i].classList.add("ch-flipped");
 	  	related_check.children[i].classList.remove("ch-normal");
@@ -156,6 +121,7 @@ function update_checkmark(grandparent_div) {
 	  related_bg.classList.add("bg-flipped");
 	  related_bg.classList.remove("bg-normal");
 	} else {
+    /* jshint shadow:true */
 	  for (var i = 0; i < related_check.children.length; i++) {
 	  	related_check.children[i].classList.add("ch-normal");
 	  	related_check.children[i].classList.remove("ch-flipped");
@@ -174,11 +140,12 @@ function custom_checkbox()
 	for (var i = 0; i < checkbox_icons.length; i++) {
 		checkbox_icons[i].style.opacity=0;
 		checkbox_icons[i].style.marginLeft="-25px";
+    /*jshint loopfunc: true */
 		checkbox_icons[i].onclick = function() {
 			for (var j = 0; j < checkbox_icons.length; j++) {
 				update_checkmark(checkbox_icons[j].parentNode);
 			}
-		}
+		};
 	}
 
 	// make correct state at the beginning
@@ -188,6 +155,7 @@ function custom_checkbox()
 
 	// unhide check-containers
 	var check_containers = document.getElementsByClassName("check-container");
+  /* jshint shadow:true */
 	for (var i = 0; i < check_containers.length; i++) {
 
 		check_containers[i].style.display="inline";
@@ -199,7 +167,7 @@ function update_dot(grandparent_div) {
 	var related_dot = grandparent_div.children[0].children[0];
 	var related_bg = grandparent_div.children[0].children[1];
 	var related_input = grandparent_div.children[1];
-	if (related_input.checked == true) {
+	if (related_input.checked === true) {
 	  related_dot.classList.add("d-flipped");
 	  related_dot.classList.remove("d-normal");
 	  related_bg.classList.add("bg-flipped");
@@ -219,14 +187,15 @@ function custom_radio_button()
 	// bind function to make correct state on click
 	var radio_bttn_icons = document.getElementsByClassName("hidden-rbutton-icon");
 
-	for (var i = 0; i < radio_bttn_icons.length; i++) {
+	for (i = 0; i < radio_bttn_icons.length; i++) {
 		radio_bttn_icons[i].style.opacity=0;
 		radio_bttn_icons[i].style.marginLeft="-25px";
+    /*jshint loopfunc: true */
 		radio_bttn_icons[i].onclick = function() {
 			for (var j = 0; j < radio_bttn_icons.length; j++) {
 				update_dot(radio_bttn_icons[j].parentNode);
 			}
-		}
+		};
 	}
 
 	// make correct state at the beginning
@@ -237,7 +206,8 @@ function custom_radio_button()
 	// unhide dot containers
 
 	var dot_containers = document.getElementsByClassName("dot-container");
-	for (var i = 0; i < dot_containers.length; i++) {
+	
+  for (var i = 0; i < dot_containers.length; i++) {
 
 		dot_containers[i].style.display="inline";
 	}
@@ -248,4 +218,4 @@ window.onload=function()
 	tamingselect();
 	custom_checkbox();
 	custom_radio_button();
-}
+};
